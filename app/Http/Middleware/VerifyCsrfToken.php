@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
+
+class VerifyCsrfToken extends BaseVerifier
+{
+    /**
+     * The URIs that should be excluded from CSRF verification.
+     *
+     * @var array
+     */
+    protected $except = [
+        'posts/create',
+        'posts',
+        'posts/{post}/edit',
+        'posts/{post}',
+        '/posts/{post}/edit'
+    ];
+}
